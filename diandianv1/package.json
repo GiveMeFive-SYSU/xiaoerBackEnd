@@ -1,0 +1,29 @@
+{
+  "name": "easyeatappserver",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bcrypt-as-promised": "^1.1.0",
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.15.4",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "multer": "^1.3.0",
+    "mysql": "^2.13.0",
+    "node-gyp": "^3.6.2",
+    "node-mysql": "^0.4.2",
+    "qr-image": "^3.2.0",
+    "qrcode": "^0.9.0",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.2"
+  }
+}
