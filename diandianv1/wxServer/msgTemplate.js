@@ -45,7 +45,7 @@ startWxService = function () {
 sendMsg = function (params) {
     var data = {
         "touser": params.touser,
-        "template_id": "XXXXXXXXXXXXXXXXXXXXXX",
+        "template_id": wxApp.oqmenu.templateid,
         "page": "index",
         "form_id": params.form_id,
         "data": {
@@ -57,12 +57,6 @@ sendMsg = function (params) {
             },
             "keyword3": {
                 "value": params.keyword3,
-            },
-            "keyword4": {
-                "value": params.keyword4,
-            },
-            "keyword5": {
-                "value": params.keyword5,
             },
             "emphasis_keyword": "keyword1.DATA"
         }

@@ -4,7 +4,8 @@ var querystring = require('querystring');
 var wxApp = require('./wxAppConfig');
 // https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
 https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
-getOpenID = function (js_code, cb) {
+
+    getOpenID = function (js_code, cb) {
 
     var url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+ wxApp.oqmenu.appid +'&secret='+wxApp.oqmenu.secret;
     var options = {

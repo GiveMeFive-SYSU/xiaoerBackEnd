@@ -263,25 +263,33 @@ router.post('/delfood', function(req, res, next) {
 /* 商家更新一个菜品 */
 router.post('/updatefood', function(req, res, next) {
     // 从连接池获取连接
+    console.log('*******************');
+    console.log(req);
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
-        var param = req.query || req.params;
+        var param = req.body || req.params;
         console.log(param);
+        if (param.disholdprice != 'null') {
+            param.disholdprice = parseInt(param.disholdprice);
+        }
+        param.dishprice = parseInt(param.dishprice);
         // 建立连接 更新一个菜品
         // "UPDATE business_dish SET DishOldprice = ?, Dishprice = ?,  Dishimage = ?,  Dishdescription = ?, Dishtypename = ? WHERE Username=? AND Dishname = ?"
         connection.query(FoodSql.updateFoodInfo, [param.disholdprice || "null", param.dishprice, param.dishimage || "null", param.dishdescription, param.dishtypename, param.dishtype, param.username, param.dishname], function(err, result) {
             if(result) {
-                console.log(result);
                 result = {
                     code: 200,
                     msg:'更新成功'
                 };
+                console.log(result);
                 res.json(result)
             } else {
-                res.json({
+                result={
                     code:403,
-                    msg:'增加失败'
-                })
+                    msg:'更新失败'
+                }
+                res.json(result);
+                console.log(result);
             }
             // 释放连接
             connection.release();

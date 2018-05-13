@@ -103,7 +103,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/Checkexist', function(req, res, next) {
-    console.log("exist");
+    console.log("Start Check exist!");
     pool.getConnection(function(err, connection) {
         var params = req.query || req.params;
         console.log(userSQL.getUserByUsername);
@@ -130,9 +130,35 @@ router.get('/Checkexist', function(req, res, next) {
     });
 });
 
+router.post('/queryshopname', function(req, res, next) {
+   console.log("queryshopname");
+   pool.getConnection(function (err, connection) {
+       var params = req.body || req.params;
+       console.log(params);
+        connection.query(userSQL.getShopNameByUsername, [params.username], function (err, result) {
+            if (result) {
+                result = {
+                    "err" : 0,
+                    "msg" : "查询成功",
+                    "shopname": result[0].Shopname
+                }
+
+            } else {
+                result = {
+                    "err" : 1,
+                    "msg": "用户名不存在"
+                }
+            }
+            // 以json形式，把操作结果返回给前台页面
+            responseJSON(res, result);
+            // 释放连接
+            connection.release();
+        })
+   })
+});
 
 router.post('/login', function(req, res, next) {
-    console.log("login")
+    console.log("login");
     pool.getConnection(function(err, connection) {
         var params = req.body || req.params;
         connection.query(userSQL.getUserByUsername, [params.username], function(err, result) {

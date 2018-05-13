@@ -1,8 +1,9 @@
 module.exports =
     {
         oqmenu: {
-            'appid':'wxf9c6bdefbe10a0f2',
-            'secret':'f9b31a5615ab6f3ea57671338bbdf29b'
+            'appid':'wx0cb2c043eba33b42',
+            'secret':'5f9eb40d8f87ed4a906eec75fc6fcd53',
+            'templateid':'0dzNLGwD3ZgAyWfLDyKZupvolZ_IsEdvGhhW8YOUgGE'
         }
 
     };
