@@ -30,31 +30,34 @@ function handlestr(str) {
     var foodsorder = -1;
     var nameorder = 0;
     for (var i in str) {
-        if (name.indexOf(str[i].Dishtypename) == -1) {
-            ++goodsorder;
-            name[nameorder++] = str[i].Dishtypename;
-            goods[goodsorder] = new Object();
-            goods[goodsorder]['foods'] = new Object();
-            foodsorder = 0;
+        if (str[i].Dishname != 'Test') {
+            if (name.indexOf(str[i].Dishtypename) == -1) {
+                ++goodsorder;
+                name[nameorder++] = str[i].Dishtypename;
+                goods[goodsorder] = new Object();
+                goods[goodsorder]['foods'] = new Object();
+                foodsorder = 0;
 
-        } else {
-            ++foodsorder;
+            } else {
+                ++foodsorder;
+            }
+            goods[goodsorder]['name'] = str[i].Dishtypename;
+            goods[goodsorder]['type'] = str[i].Dishtype;
+            goods[goodsorder]['foods'][foodsorder] = new Object();
+            goods[goodsorder]['foods'][foodsorder]['name'] = str[i].Dishname;
+            goods[goodsorder]['foods'][foodsorder]['type'] = str[i].Dishtype;
+            goods[goodsorder]['foods'][foodsorder]['price'] = str[i].Dishprice;
+            goods[goodsorder]['foods'][foodsorder]['oldprice'] = str[i].DishOldprice;
+            goods[goodsorder]['foods'][foodsorder]['sellcount'] = '0';
+            goods[goodsorder]['foods'][foodsorder]['count'] = '0';
+            goods[goodsorder]['foods'][foodsorder]['rating'] = '100';
+            goods[goodsorder]['foods'][foodsorder]['info'] = str[i].Dishinfo;
+            goods[goodsorder]['foods'][foodsorder]['icon'] = serverCongif.diandianserver.host+":"+serverCongif.diandianserver.port + "/" + serverCongif.diandianserver.imgDis + "/" + str[i].Dishimage;
+            goods[goodsorder]['foods'][foodsorder]['image'] = serverCongif.diandianserver.host+":" + serverCongif.diandianserver.port + "/" + serverCongif.diandianserver.imgDis + "/"+ str[i].Dishimage;
+            // goods[goodsorder]['foods'][foodsorder]['icon'] = str[i].Dishimage;
+            goods[goodsorder]['foods'][foodsorder]['description'] = str[i].Dishdescription;
         }
-        goods[goodsorder]['name'] = str[i].Dishtypename;
-        goods[goodsorder]['type'] = str[i].Dishtype;
-        goods[goodsorder]['foods'][foodsorder] = new Object();
-        goods[goodsorder]['foods'][foodsorder]['name'] = str[i].Dishname;
-        goods[goodsorder]['foods'][foodsorder]['type'] = str[i].Dishtype;
-        goods[goodsorder]['foods'][foodsorder]['price'] = str[i].Dishprice;
-        goods[goodsorder]['foods'][foodsorder]['oldprice'] = str[i].DishOldprice;
-        goods[goodsorder]['foods'][foodsorder]['sellcount'] = '0';
-        goods[goodsorder]['foods'][foodsorder]['count'] = '0';
-        goods[goodsorder]['foods'][foodsorder]['rating'] = '100';
-        goods[goodsorder]['foods'][foodsorder]['info'] = str[i].Dishinfo;
-        //goods[goodsorder]['foods'][foodsorder]['icon'] = serverCongif.diandianserver.host+":"+serverCongif.diandianserver.port + "/" + serverCongif.diandianserver.imgDis + "/" + str[i].Dishicon;
-        //goods[goodsorder]['foods'][foodsorder]['image'] = serverCongif.diandianserver.host+":" + serverCongif.diandianserver.port + "/" + serverCongif.diandianserver.imgDis + "/"+ str[i].Dishimage;
-        goods[goodsorder]['foods'][foodsorder]['icon'] = str[i].Dishimage;
-        goods[goodsorder]['foods'][foodsorder]['description'] = str[i].Dishdescription;
+
     }
     return goods;
 }
@@ -67,6 +70,7 @@ function handletypestr(str) {
         ++goodsorder;
         goods[goodsorder] = new Object();
         goods[goodsorder]['name'] = str[i].Dishtypename;
+        goods[goodsorder]['no'] = str[i].Dishtype;
     }
     return goods;
 }
@@ -78,6 +82,7 @@ router.get('/', function(req, res, next) {
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
         var param = req.query || req.params;
+        console.log("&&&&&&&&&&&&&&&&顾客主界面")
         console.log(param);
         // 建立连接 返回某个商家的全部菜品
         connection.query(FoodSql.getFoodListByUsername, [param.username], function(err, result) {
@@ -118,7 +123,17 @@ router.post('/queryType', function(req, res, next) {
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
         var param = req.body || req.params;
+        console.log("############测试###type")
         console.log(param);
+        // [ RowDataPacket {
+        //     Username: 'ojxf_0HeOwRJXWcSB1KkMnlaKVhI',
+        //     Dishname: 'Test',
+        //     DishOldprice: 0,
+        //     Dishprice: 0,
+        //     Dishimage: null,
+        //     Dishdescription: 'good',
+        //     Dishtypename: '粤菜',
+        //     Dishtype: 0 } ]
         // 建立连接 返回某个商家的全部菜品
         connection.query(FoodSql.getFoodTypeByUsername, [param.username, param.dishtypename], function(err, result) {
             if(result) {
@@ -144,6 +159,8 @@ router.post('/changeType', function(req, res, next) {
     if (param.addlist.length != 0) {
         param.addlist = param.addlist.split(",");
     }
+    console.log("#######Change Type");
+    console.log(param);
     for (var k in param.addlist) {
         (function(arg){
             pool.getConnection(function(err, connection) {
@@ -205,6 +222,7 @@ router.get('/queryfood', function(req, res, next) {
 /* 商家添加一个菜品 */
 router.post('/addfood', upload.any(), function(req, res, next) {
     // 从连接池获取连接
+    console.log("###########添加菜")
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
         var param = req.body;
@@ -213,6 +231,7 @@ router.post('/addfood', upload.any(), function(req, res, next) {
         if (files_img.length >= 1) {
             iconPath=files_img[0].filename;
         }
+        console.log(param);
         // 建立连接 增加一个菜品信息
         // INSERT INTO business_dish(Username,Dishname,DishOldprice,Dishprice,Dishimage,Dishdescription,Dishtypename) VALUES(?,?,?,?,?,?,?)
         connection.query(FoodSql.addFoodInfo, [param.username, param.dishname, param.disholdprice || "null", param.dishprice, iconPath || "null", param.dishdescription, param.dishtypename, param.dishtype], function(err, result) {
@@ -246,6 +265,7 @@ router.post('/delfood', function(req, res, next) {
     for (var i  in param.deletelist) {
         (function(arg){
             pool.getConnection(function(err, connection) {
+                console.log("#$$$$$$$$$删除")
                 console.log(param.deletelist[arg]);
                 connection.query(FoodSql.deleteFoodInfo,[param.username, param.deletelist[arg], param.typenum], function(err, result) {
 

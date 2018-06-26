@@ -3,7 +3,7 @@
  */
 var FoodSql = {
     getFoodTypeByUsername:"SELECT * FROM business_dish WHERE Username = ? AND Dishtypename = ?",
-    getFoodTypeListByUsername:"SELECT distinct(Dishtypename) FROM business_dish WHERE Username = ?",
+    getFoodTypeListByUsername:"SELECT distinct(Dishtypename), Dishtype FROM business_dish WHERE Username = ? ORDER BY Dishtype",
     getFoodListByUsername :"SELECT * FROM business_dish WHERE Username = ? ORDER BY Dishtype",
     getFoodByUsernameAndDishname : "SELECT * FROM business_dish WHERE Username = ? AND Dishname = ?",
     addFoodInfo : "INSERT INTO business_dish(Username,Dishname,DishOldprice,Dishprice,Dishimage,Dishdescription,Dishtypename,Dishtype) VALUES(?,?,?,?,?,?,?,?)",
