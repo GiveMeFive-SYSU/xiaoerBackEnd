@@ -7,7 +7,7 @@ var serverConfig = require("../../../server/serverConfig");
 router.get('/generateQR', function(req, res, next) {
     var param = req.query || req.params;
     console.log(param);
-    var temp_qrcode = qr_image.image(str(serverConfig.diandianserver.host) + ':' +str(serverConfig.diandianserver.port) +'/api/v1/searchFood?username=' + param.username + "&tablenum=" + param.tablenum);
+    var temp_qrcode = qr_image.image(String(serverConfig.diandianserver.host) + ':' +String(serverConfig.diandianserver.port) +'/api/v1/searchFood?username=' + param.username + "&tablenum=" + param.tablenum);
     res.type('png');
     temp_qrcode.pipe(res);
 });

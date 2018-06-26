@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         // 获取前台页面传过来的参数
         var param = req.query || req.params;
         console.log(param);
-        // 建立连接 返回某个商家的全部菜品
+        // 建立连接 返回某个商家的桌位
         connection.query(TableSql.getTableInfoByUsername, [param.username], function(err, result) {
             if(result) {
                 res.json(result);
@@ -25,6 +25,8 @@ router.post('/addtable', function(req, res, next) {
     // 获取前台页面传过来的参数
     var param = req.body || req.params;
 
+
+
     if (param.addtablelist.length != 0) {
         param.addtablelist = param.addtablelist.split(",");
     }
@@ -32,6 +34,7 @@ router.post('/addtable', function(req, res, next) {
     for (var i  in param.addtablelist) {
         (function(arg){
             pool.getConnection(function(err, connection) {
+                console.log("####add table")
                 console.log(param.addtablelist[arg]);
                 connection.query(TableSql.addTableInfo,[param.username, param.addtablelist[arg]], function(err, result) {
                     connection.release();
@@ -47,18 +50,20 @@ router.post('/addtable', function(req, res, next) {
 });
 router.post('/deltable', function(req, res, next) {
     // 获取前台页面传过来的参数
-    var param = req.query || req.params;
-    console.log(param);
-    for (var i  in param.deltablelist) {
-        (function(arg){
-            pool.getConnection(function(err, connection) {
-                console.log(param.deletelist[arg]);
-                connection.query(FoodSql.deleteTableInfo,[param.username, param.deltablelist[arg]], function(err, result) {
-                    connection.release();
-                });
-            });
-        })(i);
-    }
+    var param = req.body || req.params;
+    console.log("删除桌位的参数")
+    console.log(param)
+    console.log(param.deltablelist)
+    console.log(param.username)
+
+
+    pool.getConnection(function(err, connection) {
+        console.log(param.deltablelist);
+        connection.query(TableSql.deleteTableInfo,[param.username, param.deltablelist], function(err, result) {
+            connection.release();
+        });
+    });
+
     var result = {
         code: 200,
         msg:'删除成功'
