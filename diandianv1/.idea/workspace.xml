@@ -71,16 +71,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderSql.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderSql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/OrderSql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="152">
+              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchOrder.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="searchOrder.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/v1/searchOrder.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -151,9 +151,9 @@
         <option value="$PROJECT_DIR$/routes/api/v1/searchFood.js" />
         <option value="$PROJECT_DIR$/server/serverConfig.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/db/OrderSql.js" />
         <option value="$PROJECT_DIR$/db/OrdertailSql.js" />
         <option value="$PROJECT_DIR$/routes/api/v1/searchOrder.js" />
+        <option value="$PROJECT_DIR$/db/OrderSql.js" />
       </list>
     </option>
   </component>
@@ -200,35 +200,7 @@
             <path>
               <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
               <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
@@ -299,12 +271,12 @@
       <workItem from="1530011433265" duration="6896000" />
       <workItem from="1530024396940" duration="6703000" />
       <workItem from="1530067487285" duration="2224000" />
-      <workItem from="1530069933102" duration="607000" />
+      <workItem from="1530069933102" duration="1817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74635000" />
+    <option name="totallyTimeSpent" value="75845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="916" extended-state="6" />
@@ -685,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/OrderSql.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/OrdertailSql.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -707,6 +672,13 @@
             <element signature="e#601#911#0" />
             <element signature="n#!!block;n#check#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/OrderSql.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
         </state>
       </provider>
     </entry>
