@@ -49,7 +49,7 @@ function handlestr(str) {
             goods[goodsorder]['foods'][foodsorder]['price'] = str[i].Dishprice;
             goods[goodsorder]['foods'][foodsorder]['oldprice'] = str[i].DishOldprice;
             goods[goodsorder]['foods'][foodsorder]['sellcount'] = '0';
-            goods[goodsorder]['foods'][foodsorder]['count'] = '0';
+            goods[goodsorder]['foods'][foodsorder]['num'] = '0';
             goods[goodsorder]['foods'][foodsorder]['rating'] = '100';
             goods[goodsorder]['foods'][foodsorder]['info'] = str[i].Dishinfo;
             goods[goodsorder]['foods'][foodsorder]['icon'] = serverCongif.diandianserver.host+":"+serverCongif.diandianserver.port + "/" + serverCongif.diandianserver.imgDis + "/" + str[i].Dishimage;

@@ -130,10 +130,10 @@ router.get('/Checkexist', function(req, res, next) {
     });
 });
 
-router.post('/queryshopname', function(req, res, next) {
+router.get('/queryshopname', function(req, res, next) {
    console.log("queryshopname");
    pool.getConnection(function (err, connection) {
-       var params = req.body || req.params;
+       var params = req.query || req.params;
        console.log(params);
         connection.query(userSQL.getShopNameByUsername, [params.username], function (err, result) {
             if (result) {

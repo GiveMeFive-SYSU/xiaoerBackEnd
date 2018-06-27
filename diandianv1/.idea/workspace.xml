@@ -17,8 +17,18 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4860">
-              <caret line="162" column="29" lean-forward="false" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="29" />
+            <state relative-caret-position="300">
+              <caret line="135" column="29" lean-forward="false" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -34,16 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="www" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/www">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TableSql.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/TableSql.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,31 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchQRcode.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api/v1/searchQRcode.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchFood.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="searchFood.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/v1/searchFood.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+            <state relative-caret-position="30">
+              <caret line="51" column="64" lean-forward="true" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
               <folding>
                 <element signature="e#495#641#0" expanded="false" />
                 <element signature="n#!!block;n#handletypestr#0" expanded="false" />
-                <element signature="e#4219#5124#0" expanded="false" />
-                <element signature="e#5197#7058#0" expanded="false" />
-                <element signature="e#5278#5343#0" expanded="false" />
-                <element signature="e#7130#7655#0" expanded="false" />
-                <element signature="e#7737#8924#0" expanded="false" />
-                <element signature="e#8992#9624#0" expanded="false" />
-                <element signature="e#9695#11004#0" expanded="false" />
+                <element signature="e#4217#5122#0" expanded="false" />
+                <element signature="e#5195#7056#0" expanded="false" />
+                <element signature="e#5276#5341#0" expanded="false" />
+                <element signature="e#7128#7653#0" expanded="false" />
+                <element signature="e#7735#8922#0" expanded="false" />
+                <element signature="e#8990#9622#0" expanded="false" />
+                <element signature="e#9693#11002#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderSql.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderSql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/OrderSql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="5" column="91" lean-forward="false" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -107,8 +97,18 @@
       <file leaf-file-name="searchOrder.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/v1/searchOrder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2640">
-              <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+            <state relative-caret-position="780">
+              <caret line="83" column="114" lean-forward="false" selection-start-line="83" selection-start-column="106" selection-end-line="83" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdertailSql.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/OrdertailSql.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -150,7 +150,6 @@
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/变更日志.txt" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/db/OrderSql.js" />
         <option value="$PROJECT_DIR$/wxServer/msgTemplate.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/db/DbConfig.js" />
@@ -159,12 +158,14 @@
         <option value="$PROJECT_DIR$/wxServer/getOpenID.js" />
         <option value="$PROJECT_DIR$/routes/api/v1/getWxOpenID.js" />
         <option value="$PROJECT_DIR$/db/UserSql.js" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/routes/api/v1/searchQRcode.js" />
         <option value="$PROJECT_DIR$/routes/api/v1/searchTable.js" />
         <option value="$PROJECT_DIR$/db/FoodSql.js" />
-        <option value="$PROJECT_DIR$/server/serverConfig.js" />
         <option value="$PROJECT_DIR$/routes/api/v1/searchFood.js" />
+        <option value="$PROJECT_DIR$/routes/api/v1/searchOrder.js" />
+        <option value="$PROJECT_DIR$/server/serverConfig.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/db/OrderSql.js" />
       </list>
     </option>
   </component>
@@ -205,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -223,11 +223,6 @@
               <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
               <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianv1" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diandianv1" type="b2602c69:ProjectViewProjectNode" />
@@ -261,6 +256,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,12 +319,13 @@
       <workItem from="1527082683414" duration="670000" />
       <workItem from="1530000457736" duration="6012000" />
       <workItem from="1530011433265" duration="6896000" />
-      <workItem from="1530024396940" duration="3940000" />
+      <workItem from="1530024396940" duration="6703000" />
+      <workItem from="1530067487285" duration="2224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69041000" />
+    <option name="totallyTimeSpent" value="74028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1852" height="1098" extended-state="6" />
@@ -338,7 +335,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972315" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -370,13 +367,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/v1/searchFood.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -384,13 +374,13 @@
           <folding>
             <element signature="e#495#641#0" expanded="false" />
             <element signature="n#!!block;n#handletypestr#0" expanded="false" />
-            <element signature="e#4219#5124#0" expanded="false" />
-            <element signature="e#5197#7058#0" expanded="false" />
-            <element signature="e#5278#5343#0" expanded="false" />
-            <element signature="e#7130#7655#0" expanded="false" />
-            <element signature="e#7737#8924#0" expanded="false" />
-            <element signature="e#8992#9624#0" expanded="false" />
-            <element signature="e#9695#11004#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5195#7056#0" expanded="false" />
+            <element signature="e#5276#5341#0" expanded="false" />
+            <element signature="e#7128#7653#0" expanded="false" />
+            <element signature="e#7735#8922#0" expanded="false" />
+            <element signature="e#8990#9622#0" expanded="false" />
+            <element signature="e#9693#11002#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,26 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="72" column="40" lean-forward="false" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4860">
-          <caret line="162" column="29" lean-forward="false" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,18 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/OrderSql.js">
+    <entry file="file://$PROJECT_DIR$/db/FoodSql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/v1/searchOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+        <state relative-caret-position="180">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -729,29 +695,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/FoodSql.js">
+    <entry file="file://$PROJECT_DIR$/routes/api/v1/searchFood.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="30">
+          <caret line="51" column="64" lean-forward="true" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+          <folding>
+            <element signature="e#495#641#0" expanded="false" />
+            <element signature="n#!!block;n#handletypestr#0" expanded="false" />
+            <element signature="e#4217#5122#0" expanded="false" />
+            <element signature="e#5195#7056#0" expanded="false" />
+            <element signature="e#5276#5341#0" expanded="false" />
+            <element signature="e#7128#7653#0" expanded="false" />
+            <element signature="e#7735#8922#0" expanded="false" />
+            <element signature="e#8990#9622#0" expanded="false" />
+            <element signature="e#9693#11002#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/v1/searchOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="83" column="114" lean-forward="false" selection-start-line="83" selection-start-column="106" selection-end-line="83" selection-end-column="114" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/v1/searchFood.js">
+    <entry file="file://$PROJECT_DIR$/db/OrdertailSql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
-          <folding>
-            <element signature="e#495#641#0" expanded="false" />
-            <element signature="n#!!block;n#handletypestr#0" expanded="false" />
-            <element signature="e#4219#5124#0" expanded="false" />
-            <element signature="e#5197#7058#0" expanded="false" />
-            <element signature="e#5278#5343#0" expanded="false" />
-            <element signature="e#7130#7655#0" expanded="false" />
-            <element signature="e#7737#8924#0" expanded="false" />
-            <element signature="e#8992#9624#0" expanded="false" />
-            <element signature="e#9695#11004#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="135" column="29" lean-forward="false" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/OrderSql.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="91" lean-forward="false" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
+          <folding />
         </state>
       </provider>
     </entry>
