@@ -196,4 +196,34 @@ router.post('/login', function(req, res, next) {
         });
     });
 });
+
+
+// 更新商铺名
+router.get('/updateName', function(req, res, next) {
+    pool.getConnection(function(err, connection) {
+        var params = req.query || req.params;
+        connection.query(userSQL.updateShopName, [params.username, params.newshopname], function(err, result) {
+            if(result.length) {
+                result = {
+                    "err" : 0,
+                    "msg" : "更改成功",
+                }
+            } else {
+                result = {
+                    "err" : 1,
+                    "msg" : "失败"
+                }
+            }
+
+            // 以json形式，把操作结果返回给前台页面
+            responseJSON(res, result);
+            // 释放连接
+            connection.release();
+
+        });
+    });
+});
+
+
+
 module.exports = router;
