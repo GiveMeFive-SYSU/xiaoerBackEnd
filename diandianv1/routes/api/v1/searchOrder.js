@@ -50,6 +50,13 @@ function check(timestamp, nonce, signature ,token) {
 };
 
 /* 展示某个商家的全部订单 */
+router.get('/showUnfinishedOrder', function(req, res, next) {
+    // 从连接池获取连接
+
+});
+
+
+/* 展示某个商家的全部订单 */
 router.get('/', function(req, res, next) {
     // 从连接池获取连接
     pool.getConnection(function(err, connection) {
