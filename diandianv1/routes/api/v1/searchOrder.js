@@ -81,7 +81,7 @@ router.post('/addorder', function(req, res, next) {
             connection.release();
         });
         for(var i in param.ordertail) {
-            connection.query(OrderdetailSql.insert, [param.username, param.ordernumber,param.ordertail[i].dishname, param.ordertail[i].dishcount], function(err, result) {
+            connection.query(OrderdetailSql.insert, [param.username, param.ordernumber,param.ordertail[i].dishname, param.ordertail[i].dishcount, param.ordertail[i].dishprice], function(err, result) {
                 if(result) {
                     console.log(result);
                     result = {
