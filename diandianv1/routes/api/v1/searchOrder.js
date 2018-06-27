@@ -30,6 +30,18 @@ router.get('/wechatcheck', function (req, res, next) {
         return res.end();
     }
 });
+
+// 响应一个JSON数据
+var responseJSON = function (res, ret) {
+    if(typeof ret === 'undefined') {
+        res.json({     code:'-200',     msg: '操作失败'
+        });
+    } else {
+        res.json(ret);
+    }
+};
+
+
 function check(timestamp, nonce, signature ,token) {
     var currSign, tmp;
     tmp = [token, timestamp, nonce].sort().join("");
@@ -61,13 +73,14 @@ router.get('/', function(req, res, next) {
 /* 插入某个商家的一个订单 */
 router.post('/addorder', function(req, res, next) {
     // 从连接池获取连接
+    console.log("################################添加order")
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
-        var param = req.query || req.params;
+        var param = req.body || req.params;
         console.log(param);
         // 建立连接 增加一个订单信息
         // INSERT INTO business_order(Username, Ordernumber, Ordertime, Tablenumber, Tastenode, Price) VALUES(?,?,?,?,?)
-        connection.query(OrderSql.insert, [param.username, param.Ordernumber, param.Ordertime, param.Tablenumber, param.Tastenote || "null" ,param.Price], function(err, result) {
+        connection.query(OrderSql.insert, [param.username, param.Ordernumber, param.Ordertime, param.Tablenumber, param.Tastenote, param.Price], function(err, result) {
             if(result) {
                 console.log(result);
                 result = {
@@ -80,23 +93,47 @@ router.post('/addorder', function(req, res, next) {
             // 释放连接
             connection.release();
         });
-        for(var i in param.ordertail) {
-            connection.query(OrderdetailSql.insert, [param.username, param.ordernumber,param.ordertail[i].dishname, param.ordertail[i].dishcount, param.ordertail[i].dishprice], function(err, result) {
-                if(result) {
-                    console.log(result);
-                    result = {
-                        code: 200,
-                        msg:'增加成功'
-                    };
-                }
-                // 以json形式，把操作结果返回给前台页面
-                responseJSON(res, result);
-                // 释放连接
-                connection.release();
-            });
-        }
     });
 });
+
+/* 增加某个商家的一个订单 */
+router.post('/addorderDetail', function(req, res, next) {
+    // 获取前台页面传过来的参数
+    var param = req.body || req.params;
+    console.log(param);
+
+    param.ordertail = JSON.parse(param.ordertail);
+
+    for (var i  in param.ordertail) {
+        (function(arg){
+            // 从连接池获取连接
+            pool.getConnection(function(err, connection) {
+                console.log("@@@@@@@@@@@@@@@@添加订单详情");
+                console.log(param.username);
+                console.log(param.ordertail[arg].dishname)
+                // INSERT INTO business_orderdetail(Username,Ordernumber,Dishname,Count, Dishprice) VALUES(?,?,?,?,?)
+                connection.query(OrderdetailSql.insert, [param.username, param.Ordernumber, param.ordertail[arg].dishname, param.ordertail[arg].dishcount, param.ordertail[arg].dishprice], function(err, result) {
+                    if(result) {
+                        console.log(result);
+                        result = {
+                            code: 200,
+                            msg:'增加成功'
+                        };
+                    }
+                    // 释放连接
+                    if (arg == param.Orderlen) {
+                        responseJSON(res, result);
+                    }
+                    connection.release();
+                });
+
+            });
+        })(i);
+    }
+
+
+});
+
 
 /* 查询某个商家的一个订单 */
 router.post('/queryorder', function(req, res, next) {
