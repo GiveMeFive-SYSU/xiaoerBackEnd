@@ -66,8 +66,8 @@ router.post('/addorder', function(req, res, next) {
         var param = req.query || req.params;
         console.log(param);
         // 建立连接 增加一个订单信息
-        // INSERT INTO business_order(Username, Ordernumber, Ordertime, Tablenumber, Price) VALUES(?,?,?,?,?)
-        connection.query(OrderSql.insert, [param.username, param.ordernumber, param.Ordertime, param.Tablenumber, param.Price], function(err, result) {
+        // INSERT INTO business_order(Username, Ordernumber, Ordertime, Tablenumber, Tastenode, Price) VALUES(?,?,?,?,?)
+        connection.query(OrderSql.insert, [param.username, param.Ordernumber, param.Ordertime, param.Tablenumber, param.Tastenote || "null" ,param.Price], function(err, result) {
             if(result) {
                 console.log(result);
                 result = {
@@ -81,7 +81,7 @@ router.post('/addorder', function(req, res, next) {
             connection.release();
         });
         for(var i in param.ordertail) {
-            connection.query(OrderdetailSql.insert, [param.username, param.ordernumber,param.ordertail[i].dishname, param.ordertail[i].dishcount, param.ordertail[i].tastenote || "null"], function(err, result) {
+            connection.query(OrderdetailSql.insert, [param.username, param.ordernumber,param.ordertail[i].dishname, param.ordertail[i].dishcount], function(err, result) {
                 if(result) {
                     console.log(result);
                     result = {
