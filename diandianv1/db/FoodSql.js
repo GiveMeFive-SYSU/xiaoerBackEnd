@@ -10,6 +10,7 @@ var FoodSql = {
     deleteFoodInfo : "DELETE FROM business_dish WHERE Username=? AND Dishname=? AND Dishtype = ?",
     deleteTypeInfo : "DELETE FROM business_dish WHERE Username=? AND Dishtypename = ?",
     updateFoodInfo : "UPDATE business_dish SET DishOldprice = ?, Dishprice = ?,  Dishimage = ?,  Dishdescription = ?, Dishtypename = ?, Dishtype = ? WHERE Username=? AND Dishname = ?",
+    updateFoodInfoNoImg:"UPDATE business_dish SET DishOldprice = ?, Dishprice = ?, Dishdescription = ?, Dishtypename = ?, Dishtype = ? WHERE Username=? AND Dishname = ?",
     updateTypeInfo : "UPDATE business_dish SET Dishtype = ? WHERE Username=? AND Dishtypename = ?"
 };
 module.exports = FoodSql;

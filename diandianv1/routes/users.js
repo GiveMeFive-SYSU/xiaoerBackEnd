@@ -203,7 +203,8 @@ router.get('/updateName', function(req, res, next) {
     pool.getConnection(function(err, connection) {
         var params = req.query || req.params;
         connection.query(userSQL.updateShopName, [params.newshopname, params.username], function(err, result) {
-            if(result.length) {
+            console.log(result)
+            if(result) {
                 result = {
                     "err" : 0,
                     "msg" : "更改成功",

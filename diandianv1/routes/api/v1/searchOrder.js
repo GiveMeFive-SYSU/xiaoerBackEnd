@@ -107,13 +107,15 @@ router.get('/setFinished', function(req, res, next) {
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
         var param = req.query || req.params;
+
         console.log(param);
         // 建立连接 返回某个商家没有完成的全部订单
         connection.query(OrderSql.setFished, [param.username, param.ordernum], function(err, result) {
             if(result) {
                 console.log(result);
                 res.json({
-                    data:result
+                    data:result,
+                    code:200
                 });
             }
             connection.release();
@@ -130,7 +132,8 @@ router.get('/queryOrderByTime', function(req, res, next) {
         var param = req.query || req.params;
         console.log(param);
         // 建立连接 返回某个商家没有完成的全部订单
-        connection.query(OrderSql.queryOrderByTime, [param.timeStart, param.timeEnd], function(err, result) {
+        connection.query(OrderSql.queryOrderByTime, [param.username, param.timeStart, param.timeEnd], function(err, result) {
+            console.log(result);
             if(result) {
                 console.log(result);
                 res.json({
