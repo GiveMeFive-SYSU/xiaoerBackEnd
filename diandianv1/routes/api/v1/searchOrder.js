@@ -56,6 +56,8 @@ function handlestr(str) {
     for (var i in str) {
         s1.add(str[i].Tablenumber);
     }
+
+    
     var Tablenum = 0;
     s1.forEach(function (t) { console.log(t); })
     for (var item of s1) {
