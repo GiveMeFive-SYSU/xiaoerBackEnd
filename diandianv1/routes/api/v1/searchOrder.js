@@ -49,6 +49,35 @@ function check(timestamp, nonce, signature ,token) {
     return currSign === signature;
 };
 
+function handlestr(str) {
+    OrderList = [];
+    var s1 = new Set();
+
+    for (var i in str) {
+        s1.add(str[i].Tablenumber);
+    }
+    var Tablenum = 0;
+    s1.forEach(function (t) { console.log(t); })
+    for (var item of s1) {
+        OrderList[Tablenum] = new Object();
+        OrderList[Tablenum]['tableno'] = item;
+        OrderList[Tablenum]['order'] = new Object();
+        OrderList[Tablenum]['order'].dishes = new Array();
+        for (var i in str) {
+            if (str[i].Tablenumber == item) {
+                OrderList[Tablenum]['ordernum'] = str[i].Ordernumber;
+                OrderList[Tablenum]['order'].dishes.push({
+                    'dishname' : str[i].Dishname,
+                    'price' : str[i].Dishprice,
+                    'num' : str[i].Count
+                });
+            }
+        }
+        Tablenum += 1;
+    }
+    return OrderList;
+}
+
 /* 展示某个商家没有完成的全部订单 */
 router.get('/showUnfinishedOrder', function(req, res, next) {
     // 从连接池获取连接
@@ -59,10 +88,10 @@ router.get('/showUnfinishedOrder', function(req, res, next) {
         // 建立连接 返回某个商家没有完成的全部订单
         connection.query(OrderSql.getOrderTetailByUsername, [param.username], function(err, result) {
             if(result) {
-
-                console.log(result);
+                resultobj = handlestr(result);
+                console.log(resultobj);
                 res.json({
-                    data:result
+                    data:resultobj
                 });
             }
             connection.release();

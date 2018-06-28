@@ -202,7 +202,7 @@ router.post('/login', function(req, res, next) {
 router.get('/updateName', function(req, res, next) {
     pool.getConnection(function(err, connection) {
         var params = req.query || req.params;
-        connection.query(userSQL.updateShopName, [params.username, params.newshopname], function(err, result) {
+        connection.query(userSQL.updateShopName, [params.newshopname, params.username], function(err, result) {
             if(result.length) {
                 result = {
                     "err" : 0,
