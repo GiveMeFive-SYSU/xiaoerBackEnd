@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
         var fileFormat = (file.originalname).split(".");
         var icon_name_suffix = (Date.now() + (Math.round(Math.random() * 999)));//生成随机后缀名称
         cb(null, icon_name_suffix + "." + fileFormat[fileFormat.length - 1]);
-        req.iconFileName = icon_name_suffix;
+        req.iconFileName = icon_name_suffix + "." + fileFormat[fileFormat.length - 1];
     }
 });
 //添加配置文件到muler对象。

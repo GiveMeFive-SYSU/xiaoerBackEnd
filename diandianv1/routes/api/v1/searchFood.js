@@ -228,10 +228,13 @@ router.post('/addfood', upload.any(), function(req, res, next) {
         var param = req.body;
         var files_img = req.files;
         var iconPath;
-        if (files_img.length >= 1) {
+        if (req.iconFileName) {
+            iconPath = req.iconFileName;
+        } else if (files_img.length >= 1) {
             iconPath=files_img[0].filename;
         }
-        console.log(param);
+
+        console.log(req);
         // 建立连接 增加一个菜品信息
         // INSERT INTO business_dish(Username,Dishname,DishOldprice,Dishprice,Dishimage,Dishdescription,Dishtypename) VALUES(?,?,?,?,?,?,?)
         connection.query(FoodSql.addFoodInfo, [param.username, param.dishname, param.disholdprice || "null", param.dishprice, iconPath || "null", param.dishdescription, param.dishtypename, param.dishtype], function(err, result) {
@@ -288,7 +291,9 @@ router.post('/updatefood', upload.any(), function(req, res, next) {
 
     var files_img = req.files;
     var iconPath;
-    if (files_img.length >= 1) {
+    if (req.iconFileName) {
+        iconPath = req.iconFileName;
+    } else if (files_img.length >= 1) {
         iconPath=files_img[0].filename;
     }
 

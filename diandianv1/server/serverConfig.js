@@ -1,7 +1,7 @@
 module.exports =
     {
         diandianserver: {
-            host: 'http://172.19.53.82',
+            host: 'http://192.168.1.237',
             port: 3000,
             imgDis:'images'
         }
