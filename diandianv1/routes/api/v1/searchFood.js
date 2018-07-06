@@ -148,7 +148,7 @@ router.post('/queryType', function(req, res, next) {
 });
 
 /* 修改某个商家菜品分类 */
-router.post('/changeType', function(req, res, next) {
+    router.post('/changeType', function(req, res, next) {
     var param = req.body || req.params;
     if (param.currentlist.length != 0) {
         param.currentlist = param.currentlist.split(",");
@@ -261,7 +261,7 @@ router.post('/addfood', upload.any(), function(req, res, next) {
 });
 
 /* 商家删除一个菜品 */
-router.post('/delfood', function(req, res, next) {
+    router.post('/delfood', function(req, res, next) {
     var param = req.body || req.params;
     param.deletelist = param.deletelist.split(",");
     console.log(param);
@@ -284,7 +284,7 @@ router.post('/delfood', function(req, res, next) {
 });
 
 /* 商家更新一个菜品 */
-router.post('/updatefood', upload.any(), function(req, res, next) {
+    router.post('/updatefood', upload.any(), function(req, res, next) {
     // 从连接池获取连接
     console.log('*******************');
     //console.log(req);
@@ -333,7 +333,7 @@ router.post('/updatefood', upload.any(), function(req, res, next) {
 
 
 /* 商家更新一个菜品 */
-router.post('/updatefoodnoimg', function(req, res, next) {
+    router.post('/updatefoodnoimg', function(req, res, next) {
     // 从连接池获取连接
     console.log('*******************');
     //console.log(req);

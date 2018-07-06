@@ -67,6 +67,7 @@ function handlestr(str) {
         OrderList[Tablenum]['order'].dishes = new Array();
         for (var i in str) {
             if (str[i].Tablenumber == item) {
+                OrderList[Tablenum]['note'] = str[i].Tastenote;
                 OrderList[Tablenum]['ordernum'] = str[i].Ordernumber;
                 OrderList[Tablenum]['order'].dishes.push({
                     'dishname' : str[i].Dishname,
@@ -102,7 +103,7 @@ router.get('/showUnfinishedOrder', function(req, res, next) {
 
 });
 /* 完成某个商家没有完成的订单 */
-router.get('/setFinished', function(req, res, next) {
+router.get('/showUnfinishedOrder', function(req, res, next) {
     // 从连接池获取连接
     pool.getConnection(function(err, connection) {
         // 获取前台页面传过来的参数
